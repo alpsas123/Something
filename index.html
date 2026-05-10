@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Break</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <section class="phone">
+      <div class="top-bar">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <section class="screen active" id="introScreen">
+        <p class="eyebrow">tiny study break</p>
+        <h1>A very normal study break</h1>
+        <p class="lead">Definitely not suspicious. Just a few tiny things to do before getting back to work.</p>
+
+        <div class="mini-card">
+          <span>today's tasks</span>
+          <ul>
+            <li>clear some blocks</li>
+            <li>build something cute</li>
+            <li>answer one tiny question</li>
+          </ul>
+        </div>
+
+        <button class="primary-btn" id="startBtn">start</button>
+      </section>
+
+      <section class="screen" id="blockScreen">
+        <div class="screen-head">
+          <div>
+            <p class="eyebrow">round 1</p>
+            <h2>Block Break</h2>
+          </div>
+          <p class="score">cleared: <strong id="clearCount">0</strong>/3</p>
+        </div>
+
+        <p class="small-copy">Tap blocks to place them. Fill a row or column to clear it. Clear 3 lines to move on.</p>
+
+        <div class="blast-wrap">
+          <div class="blast-board" id="blastBoard" aria-label="Block puzzle board"></div>
+          <div class="block-tray" id="blockTray" aria-label="Available blocks"></div>
+        </div>
+
+        <button class="ghost-btn" id="skipBlockBtn">i'm bad at block games</button>
+      </section>
+
+      <section class="screen" id="deskScreen">
+        <div class="screen-head">
+          <div>
+            <p class="eyebrow">round 2</p>
+            <h2>Desk Build</h2>
+          </div>
+          <button class="ghost-btn tiny-btn" id="resetBtn">reset</button>
+        </div>
+
+        <p class="small-copy">Tap a LEGO piece, then tap a glowing spot. Build the heart to finish.</p>
+
+        <section class="desk" aria-label="Interactive study desk">
+          <button class="desk-item baseball" id="baseball" aria-label="Spin baseball">⚾</button>
+          <button class="desk-item snack" id="snack" aria-label="Inspect snack">🥪</button>
+
+          <div class="sticky-note">
+            <span>note:</span>
+            <p>ask the important question eventually</p>
+          </div>
+
+          <div class="lamp"></div>
+
+          <div class="build-area">
+            <div class="build-title">LEGO board</div>
+            <div class="lego-board" id="legoBoard">
+              <button class="lego-slot" data-slot="0"></button>
+              <button class="lego-slot" data-slot="1"></button>
+              <button class="lego-slot" data-slot="2"></button>
+              <button class="lego-slot" data-slot="3"></button>
+              <button class="lego-slot" data-slot="4"></button>
+              <button class="lego-slot" data-slot="5"></button>
+              <button class="lego-slot" data-slot="6"></button>
+              <button class="lego-slot" data-slot="7"></button>
+              <button class="lego-slot" data-slot="8"></button>
+            </div>
+          </div>
+
+          <div class="lego-tray" id="legoTray">
+            <button class="lego-piece" data-piece="0">🧱</button>
+            <button class="lego-piece" data-piece="1">🧱</button>
+            <button class="lego-piece" data-piece="2">🧱</button>
+            <button class="lego-piece" data-piece="3">🧱</button>
+            <button class="lego-piece" data-piece="4">🧱</button>
+            <button class="lego-piece" data-piece="5">🧱</button>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="promDialog" class="prom-dialog">
+    <div class="dialog-card">
+      <p class="eyebrow">final unlock</p>
+      <h2>Neele,</h2>
+      <p>
+        as much as I love baseball, and as often as I may steal Uncrustables,
+        you’ve somehow stolen way more of my time.
+      </p>
+      <p class="question">So... prom with me?</p>
+      <div class="actions">
+        <button id="yesBtn" class="primary-btn">yes :)</button>
+        <button id="alsoYesBtn" class="secondary-btn">obviously</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
