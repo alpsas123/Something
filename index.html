@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Break</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <section class="desk-card">
+      <header class="intro">
+        <p class="eyebrow">tiny study break</p>
+        <h1>Build something real quick</h1>
+        <p class="hint">Drag the LEGO pieces onto the board. No timer. No music. Just vibes.</p>
+      </header>
+
+      <section class="desk" aria-label="Interactive study desk">
+        <button class="desk-item baseball" id="baseball" aria-label="Spin the baseball">⚾</button>
+        <button class="desk-item uncrustable" id="snack" aria-label="Inspect snack">🥪</button>
+
+        <div class="sticky-note">
+          <span>note:</span>
+          <p>don’t forget the important question</p>
+        </div>
+
+        <div class="build-area">
+          <div class="build-header">
+            <span>LEGO board</span>
+            <button id="resetBtn" type="button">reset</button>
+          </div>
+
+          <div id="board" class="board" aria-label="LEGO heart build board">
+            <div class="slot" data-slot="0"></div>
+            <div class="slot" data-slot="1"></div>
+            <div class="slot" data-slot="2"></div>
+            <div class="slot" data-slot="3"></div>
+            <div class="slot" data-slot="4"></div>
+            <div class="slot" data-slot="5"></div>
+            <div class="slot" data-slot="6"></div>
+            <div class="slot" data-slot="7"></div>
+            <div class="slot" data-slot="8"></div>
+          </div>
+
+          <p class="build-help">Make the heart shape. The pieces snap when they’re close.</p>
+        </div>
+
+        <div class="pieces" aria-label="LEGO pieces">
+          <button class="piece" draggable="true" data-piece="0">🧱</button>
+          <button class="piece" draggable="true" data-piece="1">🧱</button>
+          <button class="piece" draggable="true" data-piece="2">🧱</button>
+          <button class="piece" draggable="true" data-piece="3">🧱</button>
+          <button class="piece" draggable="true" data-piece="4">🧱</button>
+          <button class="piece" draggable="true" data-piece="5">🧱</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="promDialog" class="prom-dialog">
+    <div class="dialog-card">
+      <p class="tiny">new desk notification</p>
+      <h2>Neele,</h2>
+      <p>
+        as much as I love baseball, and as often as I may steal Uncrustables,
+        you’ve somehow stolen way more of my time.
+      </p>
+      <p class="question">So... prom with me?</p>
+      <div class="actions">
+        <button id="yesBtn" class="yes-btn">yes :)</button>
+        <button id="alsoYesBtn" class="soft-btn">obviously</button>
+      </div>
+      <p id="status" class="status" role="status"></p>
+    </div>
+  </dialog>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
